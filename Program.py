@@ -28,7 +28,7 @@ def Convert_irp_Rectangle(new_rect,new_graph):
 #Gets base of hexagon from user input
 #new_graph is what the shape will be graphed onto
 def Get_Hexagon_Input(new_graph):
-    get_base = float(input("input the base length: "))
+    get_base = float(input("input the base length: ")) 
     new_hex = irp.Hexagon(get_base)
     Convert_irp_Hexagon(new_hex,new_graph)
 
