@@ -111,29 +111,23 @@ class Hexagon(InterfaceRegularPolygon):
     def Perimeter(self):
         return self.base * 6
  
-    def Get_Apothem(self):
-        # apothem = self.base / (2 * tan(180/6) * (pi/180))
+    def Get_Center(self):
+        # center = self.base / (2 * tan(180/6) * (pi/180))
 
-        apothem = [0,0]
-        apothem[0] = self.base / 2
-        apothem[1] = sqrt(pow(self.base,2) - pow(apothem[0],2))
-        return apothem
+        center = [0,0]
+        center[0] = self.base / 2
+        center[1] = sqrt(pow(self.base,2) - pow(center[0],2))
+        return center
 
     def Get_Vertices(self):
-        apothem = self.Get_Apothem()
+        center = self.Get_Center()
         vertices = np.array([
         [0,0],
         [self.base,0],
-        [apothem[0]+self.base,apothem[1]],
-        [self.base,apothem[1]*2],
-        [0,apothem[1]*2],
-        [apothem[0]-self.base,apothem[1]]
+        [center[0]+self.base,center[1]],
+        [self.base,center[1]*2],
+        [0,center[1]*2],
+        [center[0]-self.base,center[1]]
         ],dtype=object)
         return vertices
 
-# x = Hexagon(6)
-# print(x.Get_Apothem())
-# x = math.tan(16)
-# y = math.degrees(x)
-
-# print(y)
