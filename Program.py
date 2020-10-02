@@ -7,7 +7,8 @@ class Calculationcase(enum.Enum):
     triangle = 1
     rectangle = 2
     square = 3
-    hexagon = 4
+    trapezoid = 4
+    hexagon = 5
 
 #switch statement that switches the calculations
 #creates new graph and plots the new graph
@@ -19,6 +20,8 @@ def calculation_switch(user_choice,new_graph):
         User.Get_Rectangle_Input(new_graph)
     if casenum == Calculationcase.square:
         User.Get_Square_Input(new_graph)
+    if casenum == Calculationcase.trapezoid:
+        User.Get_Trapezoid_Input(new_graph)
     if casenum == Calculationcase.hexagon:
         User.Get_Hexagon_Input(new_graph)
 
