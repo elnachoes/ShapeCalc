@@ -85,10 +85,15 @@ class Trapezoid(InterfaceConvexPolygon):
         return ((self.base + self.base2) / 2 ) * self.height
 
     def Perimeter(self):
-        raise NotImplementedError
+        return 0
 
     def Get_Vertices(self):
-        raise NotImplementedError
+        return np.array([
+            [0, 0], 
+            [self.height, 0], 
+            [self.height, self.base2], 
+            [0, self.base]], 
+            dtype=object)
 
 #Regular Pentagon Class using the InterfaceConvexPolygon interface
 class Pentagon(InterfaceConvexPolygon):
