@@ -4,6 +4,10 @@ from math import sqrt
 from math import tan
 from math import pi
 
+#Interface Class for making other Regular Polygon Classes
+#Area is an abstract method for finding Area of an object
+#Perimeter is an abstract method for finding the perimeter of an object
+#Get_Vertices is an abstract method for finding the vertices given base 
 class InterfaceRegularPolygon(abc.ABC):
     @abc.abstractmethod
     def Area(self):
@@ -17,6 +21,7 @@ class InterfaceRegularPolygon(abc.ABC):
     def Get_Vertices(self):
         return 0
 
+#Regular Triangle Class using the InterfaceRegularPolygon interface
 class Triangle(InterfaceRegularPolygon):
     def __init__(self, base):
         self.base = base
@@ -27,6 +32,8 @@ class Triangle(InterfaceRegularPolygon):
     def Perimeter(self):
         return self.base * 3
 
+    #Returns a numpy 2 dimensional array containing the vertices for ploting the object
+    #utilizes the pythagorean theorem to find the top vertice
     def Get_Vertices(self):
         top_vertice = [0,0]
         top_vertice[0] = self.base / 2
@@ -38,6 +45,7 @@ class Triangle(InterfaceRegularPolygon):
         ],dtype=object)
         return vertices
 
+#Regular Square Class using the InterfaceRegularPolygon interface
 class Square(InterfaceRegularPolygon):
     def __init__(self, base):
         self.base = base
@@ -51,10 +59,7 @@ class Square(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
-class Rhombus(Square):
-    def __init__(self, base):
-        super().__init__(base)
-
+#Regular Square Class using the InterfaceRegularPolygon interface
 class Rectangle(InterfaceRegularPolygon):
     def __init__(self, base, height):
         self.base = base
@@ -69,10 +74,7 @@ class Rectangle(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
-class Parallelogram(Rectangle):
-    def __init__(self, base, height):
-        super().__init__(base, height)
-
+#Regular Trapezoid Class using the InterfaceRegularPolygon interface
 class Trapezoid(InterfaceRegularPolygon):
     def __init__(self, base, base2, height):
         self.base = base
@@ -88,6 +90,7 @@ class Trapezoid(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
+#Regular Pentagon Class using the InterfaceRegularPolygon interface
 class Pentagon(InterfaceRegularPolygon):
     def __init__(self, base):
         self.base = base
@@ -101,6 +104,7 @@ class Pentagon(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
+#Regular Hexagon Class using the InterfaceRegularPolygon interface
 class Hexagon(InterfaceRegularPolygon):
     def __init__(self, base):
         self.base = base
@@ -110,7 +114,7 @@ class Hexagon(InterfaceRegularPolygon):
 
     def Perimeter(self):
         return self.base * 6
- 
+
     def Get_Center(self):
         # center = self.base / (2 * tan(180/6) * (pi/180))
 
