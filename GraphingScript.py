@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import IRegularPoly as irp
+import IConvexPoly as icp
 
 class Graph:
     def __init__(self, patches = None, irp_object = None):

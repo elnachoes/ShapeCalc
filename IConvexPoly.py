@@ -4,11 +4,11 @@ from math import sqrt
 from math import tan
 from math import pi
 
-#Interface Class for making other Regular Polygon Classes
+#Interface Class for making other Convex Polygon Classes
 #Area is an abstract method for finding Area of an object
 #Perimeter is an abstract method for finding the perimeter of an object
 #Get_Vertices is an abstract method for finding the vertices given base 
-class InterfaceRegularPolygon(abc.ABC):
+class InterfaceConvexPolygon(abc.ABC):
     @abc.abstractmethod
     def Area(self):
         return 0
@@ -21,8 +21,8 @@ class InterfaceRegularPolygon(abc.ABC):
     def Get_Vertices(self):
         return 0
 
-#Regular Triangle Class using the InterfaceRegularPolygon interface
-class Triangle(InterfaceRegularPolygon):
+#Regular Triangle Class using the InterfaceConvexPolygon interface
+class Triangle(InterfaceConvexPolygon):
     def __init__(self, base):
         self.base = base
 
@@ -45,8 +45,8 @@ class Triangle(InterfaceRegularPolygon):
         ],dtype=object)
         return vertices
 
-#Regular Square Class using the InterfaceRegularPolygon interface
-class Square(InterfaceRegularPolygon):
+#Regular Square Class using the InterfaceConvexPolygon interface
+class Square(InterfaceConvexPolygon):
     def __init__(self, base):
         self.base = base
 
@@ -59,8 +59,8 @@ class Square(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
-#Regular Square Class using the InterfaceRegularPolygon interface
-class Rectangle(InterfaceRegularPolygon):
+#Regular Square Class using the InterfaceConvexPolygon interface
+class Rectangle(InterfaceConvexPolygon):
     def __init__(self, base, height):
         self.base = base
         self.height = height
@@ -74,8 +74,8 @@ class Rectangle(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
-#Regular Trapezoid Class using the InterfaceRegularPolygon interface
-class Trapezoid(InterfaceRegularPolygon):
+#Regular Trapezoid Class using the InterfaceConvexPolygon interface
+class Trapezoid(InterfaceConvexPolygon):
     def __init__(self, base, base2, height):
         self.base = base
         self.base2 = base2
@@ -90,8 +90,8 @@ class Trapezoid(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
-#Regular Pentagon Class using the InterfaceRegularPolygon interface
-class Pentagon(InterfaceRegularPolygon):
+#Regular Pentagon Class using the InterfaceConvexPolygon interface
+class Pentagon(InterfaceConvexPolygon):
     def __init__(self, base):
         self.base = base
 
@@ -104,8 +104,8 @@ class Pentagon(InterfaceRegularPolygon):
     def Get_Vertices(self):
         raise NotImplementedError
 
-#Regular Hexagon Class using the InterfaceRegularPolygon interface
-class Hexagon(InterfaceRegularPolygon):
+#Regular Hexagon Class using the InterfaceConvexPolygon interface
+class Hexagon(InterfaceConvexPolygon):
     def __init__(self, base):
         self.base = base
 
