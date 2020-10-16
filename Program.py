@@ -31,6 +31,7 @@ def calculation_switch(user_choice,new_graph):
 #plots graph
 def main():
     new_graph = Graph()
+    print("welcome to a shape calculator!")
     for cases in Calculationcase:
         print(F'--{cases.name} {cases.value}--')
     user_choice = int(input("input a selection: "))

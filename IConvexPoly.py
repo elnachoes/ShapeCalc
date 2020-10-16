@@ -31,17 +31,21 @@ class Triangle(InterfaceConvexPolygon):
 
     def Perimeter(self):
         return self.base * 3
+    
+    def Height(self):
+        height = [0,0]
+        height[0] = self.base / 2
+        height[1] = sqrt(pow(self.base,2) - pow(height[0],2))
+        return height
 
     #Returns a numpy 2 dimensional array containing the vertices for ploting the object
     #utilizes the pythagorean theorem to find the top vertice
     def Get_Vertices(self):
-        top_vertice = [0,0]
-        top_vertice[0] = self.base / 2
-        top_vertice[1] = sqrt(pow(self.base,2) - pow(top_vertice[0],2))
+        Height = self.Height()
         vertices = np.array([
         [0,0],
         [self.base,0],
-        top_vertice
+        [Height[0],Height[1]],
         ],dtype=object)
         return vertices
 

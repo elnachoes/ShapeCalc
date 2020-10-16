@@ -10,6 +10,6 @@ class Graph:
 
     def Plot_Graph(self, value):
         value.ax.add_patch(value.patches)
-        value.ax.set_title(F'Area = {value.icp_object.Area()} Perimeter = {value.icp_object.Perimeter()}')
+        value.ax.set_title(F'Area = {value.icp_object.Area()} Perimeter = {value.icp_object.Perimeter()}',fontweight='bold',color='blue')
         plt.axis("scaled")
         plt.show()
