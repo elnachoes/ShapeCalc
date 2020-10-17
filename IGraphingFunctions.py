@@ -36,4 +36,13 @@ class SquareFunction:
         return f'y = {self.slope}x^2 + {self.coefficient}'
 
 class CubicFunction:
-    pass
+    def __init__(self, x_values, slope = 1, coefficient = 0):
+        self.x_values = x_values
+        self.slope = slope
+        self.coefficient = coefficient
+
+    def Equation(self):
+        return self.slope * pow(self.x_values,3) + self.coefficient
+
+    def Label(self):
+        return f'y = {self.slope}x^2 + {self.coefficient}'
