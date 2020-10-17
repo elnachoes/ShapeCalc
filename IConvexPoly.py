@@ -10,15 +10,15 @@ from math import pi
 #Get_Vertices is an abstract method for finding the vertices given base 
 class InterfaceConvexPolygon(abc.ABC):
     @abc.abstractmethod
-    def Area(self):
+    def Area():
         return 0
 
     @abc.abstractmethod
-    def Perimeter(self):
+    def Perimeter():
         return 0
 
     @abc.abstractmethod
-    def Get_Vertices(self):
+    def Get_Vertices():
         return 0
 
 #Regular Triangle Class using the InterfaceConvexPolygon interface

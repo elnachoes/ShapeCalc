@@ -69,6 +69,7 @@ class Program:
         elif selected_calculation == "mem".lower():
             self.print_memory()
 
+
     def execute_calculation(self):
         self.calculation_answer = self.calculation_function(self.calculation)
         self.memory.append(self.calculation_answer)
