@@ -1,22 +1,22 @@
-import abc
+#Python libraries
 import numpy as np
-from math import sqrt
-from math import tan
-from math import pi
+import math
+import abc
 
 #Interface Class for making other Convex Polygon Classes
-#Area is an abstract method for finding Area of an object
-#Perimeter is an abstract method for finding the perimeter of an object
-#Get_Vertices is an abstract method for finding the vertices given base 
 class InterfaceConvexPolygon(abc.ABC):
+
+    #Area is an abstract method for finding the perimeter of an object
     @abc.abstractmethod
     def Area():
         return 0
 
+    #Perimeter is an abstract method for finding the perimeter of an object
     @abc.abstractmethod
     def Perimeter():
         return 0
 
+    #Get_Vertices is an abstract method for finding the vertices given base 
     @abc.abstractmethod
     def Get_Vertices():
         return 0
@@ -27,7 +27,7 @@ class Triangle(InterfaceConvexPolygon):
         self.base = base
 
     def Area(self):
-        return (sqrt(3) / 4) * (self.base ** 2)
+        return (math.sqrt(3) / 4) * (self.base ** 2)
 
     def Perimeter(self):
         return self.base * 3
@@ -35,7 +35,7 @@ class Triangle(InterfaceConvexPolygon):
     def Height(self):
         height = [0,0]
         height[0] = self.base / 2
-        height[1] = sqrt(pow(self.base,2) - pow(height[0],2))
+        height[1] = math.sqrt(pow(self.base,2) - pow(height[0],2))
         return height
 
     #Returns a numpy 2 dimensional array containing the vertices for ploting the object
@@ -119,18 +119,18 @@ class Hexagon(InterfaceConvexPolygon):
         self.base = base
 
     def Area(self):
-        return (3 * sqrt(3) * pow(self.base,2) / 2)
+        return (3 * math.sqrt(3) * pow(self.base,2) / 2)
 
     def Perimeter(self):
         return self.base * 6
 
     def Get_Center(self):
-        # center = self.base / (2 * tan(180/6) * (pi/180))
-
         center = [0,0]
         center[0] = self.base / 2
-        center[1] = sqrt(pow(self.base,2) - pow(center[0],2))
+        center[1] = math.sqrt(pow(self.base,2) - pow(center[0],2))
         return center
+
+        # center = self.base / (2 * tan(180/6) * (pi/180))
 
     def Get_Vertices(self):
         center = self.Get_Center()

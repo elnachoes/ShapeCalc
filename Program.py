@@ -1,5 +1,8 @@
-import enum
+#Other scripts in ShapeCalc
 import UserInput as User
+
+#Python libraries
+import enum
 
 #enumeration that contains the calculation types
 class CalculationCase(enum.Enum):
@@ -10,8 +13,10 @@ class CalculationCase(enum.Enum):
 #creates new graph and plots the new graph
 def calculation_switch(user_choice):
     casenum = CalculationCase(user_choice)
+
     if casenum == CalculationCase.Shape_Calculator:
         User.ShapeCalc()
+
     if casenum == CalculationCase.Graphing_Calculator:
         User.GraphCalc()
 
@@ -20,11 +25,13 @@ def calculation_switch(user_choice):
 #passes user_choice and new_graph to the calculation switch 
 #plots graph
 def main():
-    print("\nwelcome to a calculator!")
+    print("\nwelcome to a cmd graphic calculator!")
+
     for cases in CalculationCase:
         print(F'--{cases.name} {cases.value}--')
+
     user_choice = int(input("\ninput a selection: "))
     calculation_switch(user_choice)
 
-main()
-
+if __name__ == "__main__":
+    main()
