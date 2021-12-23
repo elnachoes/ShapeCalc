@@ -1,4 +1,7 @@
 # ShapeCalc
+![image](https://user-images.githubusercontent.com/31595608/147172911-a618bbb3-e3dd-4a11-ba29-5675e959b48c.png)
+![image](https://user-images.githubusercontent.com/31595608/147173073-635a34ec-a57f-4091-b70f-9a42bc496a94.png)
+
 
 #this is a basic calculator app I created to explore some OO concepts such as, inheritance, interfaces, enumerations, ect.
 I also created this app to play around with some python libraries such as Matplotlib and Numpy.
